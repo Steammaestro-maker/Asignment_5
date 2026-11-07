@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Task_9 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] a = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            a[i] = in.nextInt();
+        }
+
+        if (n > 0) {
+            int last = a[n - 1];
+            for (int i = n - 1; i > 0; i--) {
+                a[i] = a[i - 1];
+            }
+            a[0] = last;
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            if (i > 0) result.append(' ');
+            result.append(a[i]);
+        }
+
+        System.out.println(result);
+    }
+}
